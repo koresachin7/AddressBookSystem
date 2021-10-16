@@ -2,6 +2,7 @@ package com.bridgelabz;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -131,11 +132,24 @@ public class AddressBook implements AddressBookInfo {
         }
     }
 
+
+    public void countByCity(String city){
+        Map<String, Long> countCity = book.stream().collect(Collectors.groupingBy(e -> e.getCity(), Collectors.counting()));
+        System.out.println(countCity);
+        for( Person person : book )
+            System.out.println(person);
+    }
+    public void countByState(String state){
+        Map<String, Long> countState = book.stream().collect(Collectors.groupingBy(e -> e.getState(), Collectors.counting()));
+        System.out.println(countState);
+        for( Person person : book )
+            System.out.println(person);
+
+    }
+
     public void display() {
         for( Person person : book )
             System.out.println(person);
     }
 
 }
-
-
