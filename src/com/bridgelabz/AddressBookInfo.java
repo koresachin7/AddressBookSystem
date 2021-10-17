@@ -11,5 +11,8 @@ public interface AddressBookInfo {
     public void countByCity(String city);
     public void countByState(String state);
     public void sortAlphabetically(String firstName);
+    public void sortZip();
+    public void sortCity();
+    public void sortState();
 
 }
